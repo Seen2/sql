@@ -20,4 +20,18 @@ select id,origin Departure,destination as "Destination" ,duration  from flights 
 
 select id,origin Departure,destination as "Destination" ,duration  from flights where id between 1 and 3;
 
+   /*
+   in removes duplicate from itself before querry fetch.
+*/
+select id,origin Departure,destination as "Destination" ,duration  from flights where id in (2,3,3);
+
+select id,origin Departure,destination as "Destination" ,duration  from flights where id  in (2,3);
+
+
+
+
+
+select id,origin Departure,destination as "Destination" ,duration  from flights where id not in (2,3);
+
+
 
