@@ -17,3 +17,7 @@ trailing space get removed while comparison but leading dont.
 select * from flights where id=3;
 select id,origin Departure,destination as "Destination" from flights where id=3;
 select id,origin Departure,destination as "Destination" ,duration  from flights where origin='IN' and duration=12;
+
+select id,origin Departure,destination as "Destination" ,duration  from flights where id between 1 and 3;
+
+
