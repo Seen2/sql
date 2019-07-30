@@ -37,7 +37,28 @@ output row by row for each row respectively.
 /*text manipulation*/
 select upper(company) from flights;
 select lower(company) from flights;
-select concat(company) from flights;
+
+/*ignore null values and for both null gives null*/
+select concat(concat(origin,' to '),destination) from flights;
+select origin ||' to ' || destination from flights;
+
+/*sustr subtstr(string, start char , upto what length(defaault length of str aftr start index))  */
+select substr(origin,1,2)  as result from flights;
+select substr(origin,2,2)  as result from flights;/*--> one char*/
+
+/*to_char
+use for formting string
+if patter is smaller than input returns #####
+commas get ommite if they are first char of op
+*/
+select to_char('123.65') as unformat from dual;
+/*formating only change visible to display no data changes
+*/
+select to_char('123.655','999.99') as unformat from dual;
+select to_char('111123.655','9,99,999.99') as unformat from dual;
+select to_char('1111123.655','9,999,999.99') as unformat from dual;
+
+
 
 
 
