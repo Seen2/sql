@@ -32,6 +32,17 @@ select id,origin Departure,destination as "Destination" ,duration  from flights 
 
 
 select id,origin Departure,destination as "Destination" ,duration  from flights where id not in (2,3);
+alter table add comoany;
+alter table flights rename column comoany to company;
+
+/* 
+fetching null values
+null values only filtered by using IS with expression.
+
+*/
+select id,origin Departure,destination as "Destination" ,duration  from flights where company is NULL;
+
+
 
 
 
