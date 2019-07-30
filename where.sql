@@ -32,7 +32,7 @@ select id,origin Departure,destination as "Destination" ,duration  from flights 
 
 
 select id,origin Departure,destination as "Destination" ,duration  from flights where id not in (2,3);
-alter table add comoany;
+alter table flights add comoany varchar(2);
 alter table flights rename column comoany to company;
 
 /* 
@@ -42,6 +42,26 @@ null values only filtered by using IS with expression.
 */
 select id,origin Departure,destination as "Destination" ,duration  from flights where company is NULL;
 
+/*
+matching pattern
+*/
+alter table flights modify company varchar(20) default 'Air India';
+INSERT INTO flights(id,origin,destination,duration) VALUES(4,'US','NZ',10);
+INSERT INTO flights(id,origin,destination,duration) VALUES(5,'US','NZ',9);
+select id,origin Departure,destination as "Destination" ,duration  from flights where company like 'A%';
+
+INSERT INTO flights(company,id,origin,destination,duration) VALUES('iN',9,'US','NZ',9);
+select id,origin Departure,destination as "Destination" ,duration  from flights where company like 'A%';
+select id,origin Departure,destination as "Destination" ,duration  from flights where company like '%N';
+select id,origin Departure,destination as "Destination" ,duration  from flights where company like '%n';
+/*
+i anywhere
+*/
+select id,origin Departure,destination as "Destination" ,duration  from flights where company like '%i%';
+/* i at second position*/
+select id,origin Departure,destination as "Destination" ,duration  from flights where company like '%_i%';
+/* values with 3 char*/
+select id,origin Departure,destination as "Destination" ,duration  from flights where company like '___';
 
 
 
