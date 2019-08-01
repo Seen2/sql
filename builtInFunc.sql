@@ -58,6 +58,18 @@ select to_char('123.655','999.99') as unformat from dual;
 select to_char('111123.655','9,99,999.99') as unformat from dual;
 select to_char('1111123.655','9,999,999.99') as unformat from dual;
 
+/*parsing number
+works fine untill patter has more digit than actual data before and after decimal
+//errr: select to_number('1,2,4.675','9,99.999') as parse from dual;
+use pattern only if data has comma
+
+*/
+select to_number('1,24.675','999.999') as parse from dual;
+select to_number('124.675') as parse from dual;
+select to_number('1,24.675',999.999) as parse from dual;
+select to_number('1,24.675','9,99.999') as parse from dual;
+
+
 
 
 
