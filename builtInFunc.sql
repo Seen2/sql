@@ -79,5 +79,9 @@ select sum(duration) from flights;
 select avg(duration) from flights;
 select abs(duration) from flights;
 select floor(duration*90/100) as ninties from flights;
+/*count: ain't counts null values*/
+select count(*) as totalrow from flights;
+select count(distinct origin) from flights;
+
 
 
