@@ -37,3 +37,13 @@ case
     else 'Crept'
 end Income
 from employee;
+/*
+update
+*/
+update employee set salary=
+case
+    when salary<25000 then salary*2
+    when salary>25000 and salary<50000 then salary+10000
+    when salary>50000 then salary+1000
+    else salary/10
+end
