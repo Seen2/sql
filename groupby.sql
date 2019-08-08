@@ -29,3 +29,16 @@ don't select more column it will give you an error
 
 select origin,sum(duration) from flights group by origin;
 
+/*multi aggrigate func in single querry*/
+select * from flights;
+select origin,sum(duration),max(duration),avg(duration),min(duration) from flights group by origin;
+
+/*orderby and group by
+only use order by with o/p columns of group by
+*/
+select * from flights;
+select origin,sum(duration),max(duration),avg(duration),min(duration) from flights group by origin order by MIN(DURATION) desc ;
+/*two combination for order by*/
+select origin,destination, sum(duration) from flights group by origin, destination ;
+
+
