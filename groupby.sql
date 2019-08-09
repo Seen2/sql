@@ -14,6 +14,8 @@ INSERT INTO flights VALUES(5,'IN','US',12,null, SYSTIMESTAMP);
 alter table flights add priority Integer;
 INSERT INTO flights VALUES(6,'IN','NZ',10,'30-Jul-2018', SYSTIMESTAMP,10);
 INSERT INTO flights VALUES(7,'IN','NZ',10,'30-Jul-2018', SYSTIMESTAMP,9);
+INSERT INTO flights VALUES(8,'NZ','US',10,'30-Jul-2018', SYSTIMESTAMP,9);
+INSERT INTO flights VALUES(9,'NZ','IN',8,'30-Jul-2018', SYSTIMESTAMP,1);
 
 /* sum of duration of flight from india(IN) and fron usa (US)*/
 
@@ -40,5 +42,13 @@ select * from flights;
 select origin,sum(duration),max(duration),avg(duration),min(duration) from flights group by origin order by MIN(DURATION) desc ;
 /*two combination for order by*/
 select origin,destination, sum(duration) from flights group by origin, destination ;
+
+/*
+neseted aggrigate functions
+always use with group by
+2 level of nesting only
+*/
+select origin , count(id) from flights group by origin
+select max(count(id)) from flights group by origin 
 
 
