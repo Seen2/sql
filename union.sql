@@ -28,8 +28,10 @@ INSERT INTO students VALUES(3,'Isac');
 INSERT INTO students VALUES(4,'Nick');
 
 /*
-number of column in both output should be same to make union
-takes column name from first result
+use union to fetch from more than one table
+number of column in both output should be same also data type should be same to make union
+takes column name from first result/
+it removes dups from output to avoid use  is faster --> union all
 */
 select origin || ' - ' || destination as Flight from flights where origin like 'I%' or destination like '%S'
 UNION
