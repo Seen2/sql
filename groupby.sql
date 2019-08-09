@@ -50,5 +50,10 @@ always use with group by
 */
 select origin , count(id) from flights group by origin
 select max(count(id)) from flights group by origin 
+/* err: bcoz we can't use where for filtering of aggrigated column
+use having only with aggrigated column else use where 
+its okay to use diffrent aggrigate func in having and group by
+select origin , count(id) from flights where count(id)>=1 group by origin */
+select origin , count(id) from flights group by origin having count(id)>=1            
 
 
