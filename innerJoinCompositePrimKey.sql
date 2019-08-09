@@ -28,11 +28,17 @@ insert into transactions(tid,amt,rid,cid) values(10081903,20000,1003,2);
 insert into transactions(tid,amt,rid,cid) values(10081904,10000,1001,1);
 insert into transactions(tid,amt,rid,cid) values(10081905,22000,1001,2);
 insert into transactions(tid,amt,rid,cid) values(10081906,30000,1003,1);
+insert into transactions(tid,amt,rid,cid) values(10081907,22000,1002,2);
+insert into transactions(tid,amt,rid,cid) values(10081908,30000,1002,1);
 
 
 select c.name as customers,r.name recivers,t.amt,t.tid as "Transactoin Id." from
     transactions t inner join customers c on t.cid=c.cid
     inner join recivers r on t.rid=r.rid;
+
+select c.name as customers,r.name recivers,t.amt,t.tid as "Transactoin Id." from
+    transactions t inner join customers c on t.cid=c.cid
+    inner join recivers r on t.rid=r.rid where r.name ='Ankit';
 
 select * from customers;
 select * from recivers;
