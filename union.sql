@@ -32,6 +32,8 @@ use union to fetch from more than one table
 number of column in both output should be same also data type should be same to make union
 takes column name from first result/
 it removes dups from output to avoid use  is faster --> union all
+never use cross join between related tables
+order of croos joint doesn't matters table1 cross join table2 = table2 cross join table1
 */
 select origin || ' - ' || destination as Flight from flights where origin like 'I%' or destination like '%S'
 UNION
