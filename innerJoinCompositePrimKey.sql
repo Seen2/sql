@@ -32,6 +32,11 @@ insert into transactions(tid,amt,rid,cid) values(10081907,22000,1002,2);
 insert into transactions(tid,amt,rid,cid) values(10081908,30000,1002,1);
 
 
+/*
+never join three tables such as one is parrent of two child
+follow child to grand rule while joining
+*/
+
 select c.name as customers,r.name recivers,t.amt,t.tid as "Transactoin Id." from
     transactions t inner join customers c on t.cid=c.cid
     inner join recivers r on t.rid=r.rid;
