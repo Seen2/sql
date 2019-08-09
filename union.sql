@@ -26,3 +26,19 @@ INSERT INTO students VALUES(1,'Alex');
 INSERT INTO students VALUES(2,'MacGyver');
 INSERT INTO students VALUES(3,'Isac');
 INSERT INTO students VALUES(4,'Nick');
+
+/*
+number of column in both output should be same to make union
+takes column name from first result
+*/
+select origin || ' - ' || destination as Flight from flights where origin like 'I%' or destination like '%S'
+UNION
+select name from students where name like 'I%' or name like 'M%';
+
+select origin || ' - ' || destination as SearchResults from flights where origin like 'I%' or destination like '%S'
+UNION
+select name as SearchResults from students where name like 'I%' or name like 'M%';
+
+select origin || ' - ' || destination as SearchResults, 'Flights' as source from flights where origin like 'I%' or destination like '%S'
+UNION
+select name as SearchResults, 'students' as source from students where name like 'I%' or name like 'M%';
