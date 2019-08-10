@@ -40,3 +40,15 @@ select s.stid,s.name,s.flightid as std_flight_id, f.id as flightId from students
 select s.stid,s.name,s.flightid as std_flight_id, f.id as flightId from students s cross join flights f where s.flightid=f.id;
 
 select s.stid,s.name,s.flightid as std_flight_id from students s inner join flights f on s.flightid=f.id;
+
+
+/*
+inner join with Group by
+*/
+
+select f.origin || ' - ' || f.destination as journey, count(*) from students s inner join flights f on s.flightid=f.id group by
+ f.origin || ' - ' || f.destination;
+ 
+ select f.id, count(*) from students s inner join flights f on s.flightid=f.id group by
+ f.id;
+
