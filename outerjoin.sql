@@ -62,5 +62,13 @@ null value from both sides
 */
 select s.name,m.courseid,m.marks,m.stid from marksdetails m full outer join  students s on s.stid=m.stid;
 
+/*outer join with filter
+only apply filter on the side of join
+ie. for left join apply filter on left table
+*/
+
+select s.name,m.courseid,m.marks,m.stid from marksdetails m full outer join  students s on s.stid=m.stid where m.courseid in (2001,3001);
+
+
 
 
