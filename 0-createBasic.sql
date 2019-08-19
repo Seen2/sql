@@ -18,3 +18,17 @@ SELECT * FROM flights;
 SELECT Length(origin),Length(destination) FROM flights;
 DESC flights;
 
+
+/*college lab*/
+
+create table student(
+rollnumber number(12) primary key,
+snmae varchar2(30),
+dob date,
+address varchar2(50)
+);
+
+SELECT owner, table_name FROM all_tables; /*show list of all table on computer*/
+rename student to student_42;
+desc student_42;
+
