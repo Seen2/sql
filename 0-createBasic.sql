@@ -32,6 +32,10 @@ SELECT owner, table_name FROM all_tables; /*show list of all table on computer*/
 rename student to student_42;
 desc student_42;
 
+insert into student_42 values(1,'sb',systimestamp,'dsd');
+
+insert into student_42 values(&r,'&sn','&d','&add'); /*interactive mode for char and date use '' and for number don't */
+
 create view stud_42 as select * from student_42; /* point to same memory location */
 SELECT owner, view_name FROM all_views; 
 insert into stud_42 values(1,'sb',systimestamp,'dsd');
