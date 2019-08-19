@@ -21,3 +21,6 @@ ALTER TABLE students MODIFY roll NUMBER(3) ;
 ALTER TABLE students RENAME COLUMN stdid TO sid;
 
 drop table students
+
+ALTER TABLE flight ADD CONSTRAINT id_flight_prim primary  key(flightid);
+
