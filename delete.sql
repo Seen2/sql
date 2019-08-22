@@ -30,6 +30,6 @@ delete from flights;/*= delete flights*/
 
 update flights set company=NULL ;/*cant delete a column from table so set all to null*/
 
-truncate table flights ;/*= delete flights*/
+truncate table flights ;/*= delete flights and create what lefts of*/
 
 
