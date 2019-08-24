@@ -13,19 +13,18 @@ set autocommmit on will on it
 
 ##
 DDL : data defination language
-##
    CREATE, DROP, ALTER, TRUNCATE
 
-DML: data manipulation language
 ##
+DML: data manipulation language
   SELECT, DELETE, INSERT, UPDATE
 
-TCL: transaction control language
 ##
+TCL: transaction control language
   COMMIT, ROLLBACK, SAVE POINT
 
-DCL:  data control language
 ##
+DCL:  data control language
   GRANT, REVOKE
   
   
