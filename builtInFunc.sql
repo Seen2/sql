@@ -68,6 +68,7 @@ select to_number('1,24.675','999.999') as parse from dual;
 select to_number('124.675') as parse from dual;
 select to_number('1,24.675',999.999) as parse from dual;
 select to_number('1,24.675','9,99.999') as parse from dual;
+select to_char(sysdate, 'day dd-mon-yy hh:mm:ss') from dual;
 
 
 
