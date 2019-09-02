@@ -19,6 +19,17 @@ select name ,dept from std_42 where dept in (select dept from std_42 group by de
   --  to_char,to_date,to_number,substr,soundex,avg,min,max,power,abs,count,sum,round
   --example
   select 100*to_number(substr('S1123',2)) from dual;
+  -->112300                              
+  select power(2,3) Num from dual;
+  -->8
+  select abs(-20) Num from dual;
+  -->20
+  select sum(dept) from std_42;
+  -->9
+  select round(23.333333,2) from dual;
+  -->23.33
+  
+                              
   
 --String
       --length
