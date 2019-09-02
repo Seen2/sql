@@ -32,6 +32,14 @@ delete from product_master where qt_on_hand=100;
 delete from client_master where state='Tamil Nadu';
 
 --06. Alter
+alter table client_master add(telephone number(10));
+alter table product_master modify sell_price number(10,2);
+                                               
+--07. destroy table client_master with its data
+drop table client_master;
+
+--08. rename salesman_master to sman_master;
+rename salesman_master to sman_master;
 
 
 
