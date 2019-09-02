@@ -34,6 +34,8 @@ select name ,dept from std_42 where dept in (select dept from std_42 group by de
   -->00000012342231
   select to_char(12342231,'09999999999999') from dual;
   -->12342231
+  select to_char(12342231,'9999') from dual;
+  -->####
   
                               
   
