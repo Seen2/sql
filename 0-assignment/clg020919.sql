@@ -28,6 +28,12 @@ select name ,dept from std_42 where dept in (select dept from std_42 group by de
   -->9
   select round(23.333333,2) from dual;
   -->23.33
+  select to_char(sysdate,'yy-mm-dd dy HH:MM:SS') from dual;
+  -->19-09-02 mon 03:09:04
+  select to_char(12342231,'09999999999999') from dual;
+  -->00000012342231
+  select to_char(12342231,'09999999999999') from dual;
+  -->12342231
   
                               
   
