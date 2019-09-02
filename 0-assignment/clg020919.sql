@@ -16,7 +16,9 @@ select name ,dept from std_42 where dept in (select dept from std_42 group by de
 
 
  -- inbuilt func
-  --  to_char,to_date,substr,soundex,avg,min,max,power,abs,count,sum,round
+  --  to_char,to_date,to_number,substr,soundex,avg,min,max,power,abs,count,sum,round
+  --example
+  select 100*to_number(substr('S1123',2)) from dual;
   
 --String
       --length
