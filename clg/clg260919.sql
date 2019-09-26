@@ -85,7 +85,7 @@ begin
   for i in 1..5 loop
     r:=i;
     a:=3.14*r*r;
-    insert into circle values(r,a);
+    insert into circles values(r,a);
   end loop;
 
 end;
