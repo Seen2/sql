@@ -68,3 +68,24 @@ begin
     dbms_output.put_line('');
   end loop;
 end;
+
+--sql and plsql
+
+--drop table circles;
+create table circles(
+radius number(5,2),
+area number(8,3)
+);
+set serveroutput on;
+
+declare
+  r circles.radius%type;
+  a circles.area%type;
+begin
+  for i in 1..5 loop
+    r:=i;
+    a:=3.14*r*r;
+    insert into circle values(r,a);
+  end loop;
+
+end;
