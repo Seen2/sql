@@ -24,3 +24,8 @@ drop table students
 
 ALTER TABLE flight ADD CONSTRAINT id_flight_prim primary  key(flightid);
 
+
+--disable and enable constraint
+alter table TableName desable constraint constraintname;
+alter table TableName enable constraint constraintname;
+
