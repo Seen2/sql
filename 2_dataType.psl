@@ -18,4 +18,24 @@ declare
     student.marks :=81;
     dbms_output.put_line(student.name || ' got '||  student.marks);
 end;
-  
+   
+--declaring and using table
+
+
+declare
+  type studentName 
+  --identify table
+  is table of students.name%type 
+  --inexing it
+  index by simple_integer;
+  studentList studentName;
+ begin
+    select name 
+    --filling the table
+    into studentList(1) 
+    from students 
+    where rownum<=1;
+    dbms_output.put_line('Hello!!' );
+    --retrieving the table
+    dbms_output.put_line('Hello!! '|| studentList(1) );
+end;
