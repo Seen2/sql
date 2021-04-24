@@ -39,3 +39,33 @@ declare
     --retrieving the table
     dbms_output.put_line('Hello!! '|| studentList(1) );
 end;
+
+--record
+create table employee(
+name varchar2(20),
+salary number
+);
+
+insert into employee values('Shintu',25000);
+insert into students values('Shintu',81);
+
+declare
+    type personRecord 
+        is record(
+                    name employee.name%type,
+                    salary employee.salary%type,
+                    grade students.marks%type,
+                    age integer
+                );
+    ActivePerson personRecord;
+begin
+    select e.name,e.salary,s.marks,22 into ActivePerson from students s, employee e  where e.name=s.name;
+    dbms_output.put_line(ActivePerson.name || ' ' || ActivePerson.salary || ' ' || ActivePerson.age);
+    
+end;
+
+
+
+
+
+
