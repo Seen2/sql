@@ -23,3 +23,17 @@ exception
     when others then
     rollback;
 end;
+
+
+declare 
+    sName students.name%type;
+    sMarks students.marks%type;
+begin
+    
+    select name into sname from students where marks=13;
+    dbms_output.put_line(sname);
+exception
+    when others then
+        rollback;
+end;
+
