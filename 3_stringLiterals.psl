@@ -1,0 +1,10 @@
+
+
+declare 
+
+ vmessage varchar2(50);
+begin
+    
+    vmessage :='This isn''t what it seems it''s';
+    dbms_output.put_line(vmessage);
+end;
