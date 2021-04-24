@@ -26,8 +26,8 @@ end;
 
 
 declare 
-    sName students.name%type;
-    sMarks students.marks%type;
+    sName students.name%type not null :='Shintu';
+    sMarks students.marks%type not null default 81;
 begin
     
     select name into sname from students where marks=13;
