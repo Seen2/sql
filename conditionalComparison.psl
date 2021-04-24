@@ -1,0 +1,14 @@
+declare 
+
+ vmessage varchar2(50) :='Jzz';
+begin
+    
+    if vmessage='Doe'
+    -- or vmessage!='Doe'
+    or vmessage like 'D%'
+    or vmessage in ('Hello','Jhon','Sintu')
+    or vmessage between 'Jaa' and 'Jzz'
+    then
+        dbms_output.put_line(vmessage);
+    end if;
+end;
