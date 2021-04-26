@@ -1,0 +1,16 @@
+declare
+    
+    message varchar2(20):='hello';
+begin
+    
+    dbms_output.put_line(message);
+exception
+    when zero_divided then
+        -- 
+    when no_data_found or too_many_rows
+        -- 
+    -- test for all others
+    when others then
+        -- sqlcode(gives error code can be searched on web), and sqlerrm(gives error message)
+end;
+        
