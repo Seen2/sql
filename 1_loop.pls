@@ -54,12 +54,25 @@ end;
 --continue==> normal, continue when => conditional
 --exit=> normal, exit when =>conditional
 
+-- indfinite loop
 
 declare
     i number:=0;
 begin
     loop
     exit when i=10;
+    dbms_output.put_line(i);
+    i:=i+1;
+    end loop;
+   
+    
+end;
+        
+-- while loop
+declare
+    i number:=0;
+begin
+    while i!=10 loop
     dbms_output.put_line(i);
     i:=i+1;
     end loop;
