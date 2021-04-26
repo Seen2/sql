@@ -1,0 +1,28 @@
+create table employee(
+name varchar2(20),
+salary number(6)
+);
+
+
+alter table employee add employeeId number constraint empPrirme Primary key novalidate;
+--different block for initiating sequence
+declare
+    
+begin
+    execute immediate 'CREATE SEQUENCE employeeSeqId
+    MINVALUE 1
+    START WITH 1
+    INCREMENT BY 1
+    CACHE 20';
+    
+end;
+
+declare
+    
+begin
+    
+    for i in 1..10 loop
+        insert into employee(name,salary,employeeId) values('jhon',12232+i,employeeSeqId.nextval);
+    end loop;
+end;
+        
