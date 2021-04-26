@@ -1,0 +1,21 @@
+declare
+    vcheck employee.name%type;
+begin
+
+    
+    for i in 1..10 loop
+        insert into employee(name,salary,employeeId) values('jhon',12232+i,employeeSeqId.nextval);
+    end loop;
+    select name into vcheck from employee where employeeid=9;
+    << label>>
+        dbms_output.put_line(vcheck);
+        goto Conclusion;
+    if vcheck='Jhon'  then
+        goto label;
+    end if;
+    -- lebel can't be last statement in program so put null after it to avoid bug
+    <<Conclusion>>
+    NULL;
+    
+end;
+        
