@@ -1,0 +1,20 @@
+--implicit cursor
+
+declare
+    var_rows number;
+
+begin
+    select avg(salary) into var_rows from employee;
+    dbms_output.put_line( var_rows); 
+    -- implicit plsql cursor attrubutes
+    -- dbms_output.put_line(sql%isopen);--true cursor is open can't be logged
+    -- dbms_output.put_line((sql%found));--true for any effected row
+    -- dbms_output.put_line(sql%notfound);--true for no effected row
+    dbms_output.put_line(TO_CHAR(sql%rowcount));--0 if no row effected,1 if any rows effected
+exception
+    when others then
+        -- sqlcode(gives error code can be searched on web), and sqlerrm(gives error message)
+       dbms_output.put_line(sqlcode);  
+       dbms_output.put_line(sqlerrm);  
+end;
+        
