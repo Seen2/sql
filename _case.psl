@@ -1,0 +1,31 @@
+--selector
+declare
+    i number :=1;
+    message varchar2(5);
+begin
+    case i
+        when 1 then message:='Jan';
+        when 2 then message:='Feb';
+        when 3 then message:='Mar';
+        --mandatory to have else
+        else message:='More than a quarter';
+    end case;
+    dbms_output.put_line(message);
+end;
+
+--searched
+declare
+    i number :=1;
+    message varchar2(20);
+begin
+    case 
+        when i>=1 and i<4 then message:='First Quarter';
+        when i>=4 and i<7 then message:='Second Quarter';
+        when i>=7 and i<10 then message:='Third Quarter';
+        when i>=10 and i<=12 then message:='Fourth Quarter';
+        else message:='Out of range';
+    end case;
+    dbms_output.put_line(message);
+end;
+        
+        
