@@ -1,1 +1,12 @@
-
+declare
+    i number:=1;
+begin
+    if i!=0 then
+        dbms_output.put_line(i);
+    elsif i=1 then
+        dbms_output.put_line(i);
+    else 
+     dbms_output.put_line(i);
+    end if;
+end;
+        
