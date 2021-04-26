@@ -51,3 +51,7 @@ exception
         rollback;
 end;
 
+--continue==> normal, continue when => conditional
+--exit=> normal, exit when =>conditional
+
+
