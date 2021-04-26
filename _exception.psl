@@ -7,10 +7,43 @@ begin
 exception
     when zero_divided then
         -- 
-    when no_data_found or too_many_rows
+    when no_data_found or too_many_rows then
         -- 
     -- test for all others
     when others then
         -- sqlcode(gives error code can be searched on web), and sqlerrm(gives error message)
+end;
+        
+-- user defined exceptions
+
+create table employee(
+name varchar2(20) not null,
+salary number);
+
+
+declare
+    
+-- userdefined exception
+    -- step 1
+    not_null_constraint exception;
+    -- step 2
+    pragma exception_init   (not_null_constraint,-1407);
+    
+begin
+    dbms_output.put_line('Success');
+    -- step 3
+    -- condition
+    raise not_null_constraint;
+    
+    
+exception
+    -- step 4
+    when not_null_constraint then
+        dbms_output.put_line('Successfully trapped not nullconstraint');
+    -- test for all others
+    when others then
+        -- sqlcode(gives error code can be searched on web), and sqlerrm(gives error message)
+       dbms_output.put_line(sqlcode);  
+       dbms_output.put_line(sqlerrm);  
 end;
         
