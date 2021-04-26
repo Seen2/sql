@@ -1,4 +1,6 @@
---selector
+--one case is matched remaining are not executable
+
+--selector 
 declare
     i number :=1;
     message varchar2(5);
@@ -7,13 +9,13 @@ begin
         when 1 then message:='Jan';
         when 2 then message:='Feb';
         when 3 then message:='Mar';
-        --mandatory to have else
+        --mandatory to have else to avoid error
         else message:='More than a quarter';
     end case;
     dbms_output.put_line(message);
 end;
 
---searched
+--searched can use more than one parameter and variables
 declare
     i number :=1;
     message varchar2(20);
@@ -23,6 +25,7 @@ begin
         when i>=4 and i<7 then message:='Second Quarter';
         when i>=7 and i<10 then message:='Third Quarter';
         when i>=10 and i<=12 then message:='Fourth Quarter';
+        --mandatory to have else to avoid error
         else message:='Out of range';
     end case;
     dbms_output.put_line(message);
