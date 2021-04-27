@@ -18,3 +18,26 @@ exception
        dbms_output.put_line(sqlerrm);  
 end;
         
+create table employee(
+name varchar2(20), slary number);
+
+begin
+    for i in 1..10 loop
+        insert into employee values('Jhon'||to_char(i),1300321*i);
+    end loop;
+end;
+
+
+declare
+   cursor employees is select * from employee;
+   emprecord employees%rowtype;
+begin
+    open employees;
+    loop 
+        fetch employees into emprecord;
+            exit when employees%notfound;
+            dbms_output.put_line(emprecord.name || ' ' || emprecord.slary);
+    end loop;
+    close employees;
+end;
+     
