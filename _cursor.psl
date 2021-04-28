@@ -81,3 +81,15 @@ begin
     -- commit;
     close emp;
 end;  
+
+
+--for loop cursor
+begin
+
+    
+    for emp in  (select * from employee) loop
+        dbms_output.put_line(emp.name);
+    end loop;
+   
+    
+end;
