@@ -42,9 +42,9 @@ begin
 end;
      
      
-     --err
+--some err, explicit cursor 
      
-     declare
+declare
    --underlying data is locked until cursor is closed, to terminate it use rollback and commit.
    cursor emp is select * from employee for update of name,slary;
 begin
@@ -53,6 +53,31 @@ begin
     update employee 
     set name=upper(name), slary=slary+100 
     where current of emp;
+    -- commit;
+    close emp;
+end;  
+
+
+--explicit cursor with parameter
+
+declare
+   --underlying data is locked until cursor is closed, to terminate it use rollback and commit.
+   cursor emp(vname employee.name%type) 
+   is select * from employee 
+   where name=vname 
+   for update of slary;
+   emprecords employee%rowtype;
+begin
+    open emp('Jhon1');
+    loop 
+        
+        fetch emp into emprecords;
+        exit when emp%notfound;
+        update employee 
+        set  slary=slary*2 
+        where current of emp;
+    end loop;
+    
     -- commit;
     close emp;
 end;  
