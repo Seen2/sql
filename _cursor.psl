@@ -41,3 +41,18 @@ begin
     close employees;
 end;
      
+     
+     --err
+     
+     declare
+   --underlying data is locked until cursor is closed, to terminate it use rollback and commit.
+   cursor emp is select * from employee for update of name,slary;
+begin
+    open emp;
+    
+    update employee 
+    set name=upper(name), slary=slary+100 
+    where current of emp;
+    -- commit;
+    close emp;
+end;  
