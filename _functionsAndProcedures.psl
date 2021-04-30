@@ -22,7 +22,7 @@ end raise_salary;
 
 --FUNCTION
 
-create or replace function validate_salary(ename in varchar2,esal in number)
+create or replace function validate_salary(ename in varchar2,esal in number default 1000)
 return varchar2
 is
 oldsalary employee.salary%type;
