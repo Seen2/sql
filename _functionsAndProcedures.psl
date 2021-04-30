@@ -1,0 +1,54 @@
+create table employee(
+vname varchar2(20),
+salary number
+);
+
+begin 
+    for i in 1..100 loop
+    insert into employee values('Jhon' || to_char(i),i*10000);
+    end loop;
+end;
+
+
+create or replace procedure raise_salary(ename in varchar2,shike in number,msg out char)
+as
+oldsalary employee.salary&type;
+-- 
+begin
+    -- 
+exception
+    -- 
+end raise_salary;
+
+--FUNCTION
+
+create or replace function validate_salary(ename in varchar2,esal in number)
+return varchar2
+is
+oldsalary employee.salary%type;
+-- 
+begin
+    --
+    select salary into oldsalary from employee where vname=ename;
+    
+    if(oldsalary=esal) then
+    return 'Validation pass';
+    
+    else
+    -- 
+    return 'Validation failed';
+    end if;
+    
+exception
+    -- 
+    when others then
+    null;
+end validate_salary;
+
+--run seperately
+
+
+declare
+begin
+dbms_output.put_line(validate_salary('Jhon1',1000));
+end;
